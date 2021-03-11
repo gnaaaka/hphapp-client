@@ -7,7 +7,7 @@ const Orders = ({ orders }) => {
   const showDownloadLink = (order) => (
     <PDFDownloadLink
       document={<AdminInvoice order={order} />}
-      fileName='invoice.pdf'
+      fileName={`Quote_${order._id.slice(-5)}.pdf`}
       className='text-center btn btn-primary btn-raised btn-block'
     >
       Download PDF

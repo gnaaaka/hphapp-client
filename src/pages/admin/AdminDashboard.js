@@ -25,8 +25,9 @@ const AdminDashboard = () => {
         <tr>
           <th scope='col'>Product</th>
           <th scope='col'>sku</th>
-          <th scope='col'>Price</th>
           <th scope='col'>Quantity</th>
+          <th scope='col'>Price</th>
+          <th scope='col'>Total</th>
         </tr>
       </thead>
       <tbody>
@@ -36,8 +37,9 @@ const AdminDashboard = () => {
               <b>{p.product ? p.product.title : "No Product"}</b>
             </td>
             <td>{p.product ? p.product.part : "No Sku"}</td>
-            <td>${p.product ? p.product.price : "No Price"}</td>
             <td>{p.count}</td>
+            <td>${p.product ? p.product.price : "No Price"}</td>
+            <td>${p.count * p.product.price}</td>
           </tr>
         ))}
       </tbody>
@@ -47,7 +49,7 @@ const AdminDashboard = () => {
   const showDownloadLink = (order) => (
     <PDFDownloadLink
       document={<Invoice order={order} />}
-      fileName='invoice.pdf'
+      fileName={`Quote_${order._id.slice(-5)}.pdf`}
       className='text-center btn btn-primary btn-raised btn-block'
     >
       Download PDF
@@ -90,32 +92,6 @@ const AdminDashboard = () => {
         </div>
       </div>
     ));
-
-  // const showOrders = () => (
-  //   <div className='col-md-8 mx-auto'>
-  //     {orders.map((order) => (
-  //       <div key={order._id} className='row mb-3'>
-  //         <hr />
-  //         {/* <pre>{JSON.stringify(order, null, 4)}</pre> */}
-  //         <hr />
-  //         <div className='col text-center bg-light py-3'>
-  //           <div className='container-fluid px-1'>
-  //             <div className='row'>
-  //               {order &&
-  //                 order.products &&
-  //                 order.products.map((p, i) => (
-  //                   <div key={i}>
-  //                     <p>{p.count}</p>
-  //                     <p>{p.product ? p.product.title : "No Product"}</p>
-  //                   </div>
-  //                 ))}
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     ))}
-  //   </div>
-  // );
 
   return (
     <div className='container-fluid'>

@@ -40,6 +40,7 @@ const Invoice = ({ order }) => {
             <TableCell style={styles.cell}>sku</TableCell>
             <TableCell style={styles.cell}>Quantity</TableCell>
             <TableCell style={styles.cell}>Price</TableCell>
+            <TableCell style={styles.cell}>Total</TableCell>
           </TableHeader>
         </Table>
         <Table data={order.products}>
@@ -59,6 +60,10 @@ const Invoice = ({ order }) => {
             <DataTableCell
               style={styles.cellData}
               getContent={(x) => `$${x.product.price}`}
+            />
+            <DataTableCell
+              style={styles.cellData}
+              getContent={(x) => `$${x.product.price * x.count}`}
             />
           </TableBody>
         </Table>
@@ -152,9 +157,9 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
   },
   cellData: {
-    padding: 4,
+    padding: 3,
     textAlign: "center",
-    fontSize: 10,
+    fontSize: 9,
   },
   title: {
     fontSize: 24,
