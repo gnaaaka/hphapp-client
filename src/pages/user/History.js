@@ -28,8 +28,8 @@ const History = () => {
       <thead className='thead-light'>
         <tr>
           <th scope='col'>Product</th>
-          <th scope='col'>Price</th>
           <th scope='col'>Quantity</th>
+          <th scope='col'>Price</th>
         </tr>
       </thead>
       <tbody>
@@ -38,8 +38,8 @@ const History = () => {
             <td>
               <b>{p.product.title}</b>
             </td>
-            <td>${p.product.price}</td>
             <td>{p.count}</td>
+            <td>${p.product.price}</td>
           </tr>
         ))}
       </tbody>
@@ -49,7 +49,7 @@ const History = () => {
   const showDownloadLink = (order) => (
     <PDFDownloadLink
       document={<Invoice order={order} />}
-      fileName='invoice.pdf'
+      fileName={`Quote_${order._id.slice(-5)}.pdf`}
       className='text-center btn btn-primary btn-raised btn-block'
     >
       Download PDF

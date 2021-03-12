@@ -107,13 +107,9 @@ const Checkout = ({ history }) => {
           <MenuItem value={kapiolani}>
             Kapiolani Medical Center for Women & Children IT
           </MenuItem>
-
           <MenuItem value={straubInfo}>Straub Info Systems</MenuItem>
-
           <MenuItem value={wilcox}>Wilcox Memorial Hospital</MenuItem>
-
           <MenuItem value={harborCourt}>Harbor Court</MenuItem>
-
           <MenuItem value={paliMomi}>Pali Momi Medical Center</MenuItem>
         </Select>
         <FormHelperText>Address is required.</FormHelperText>
