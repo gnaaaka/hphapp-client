@@ -93,12 +93,8 @@ const Invoice = ({ order }) => {
           </Text>
         </View>
         <View style={styles.agreementHeader}>
-          <Text>Terms: 45 days with purchase order</Text>
           <Text>Purchase order must be made to:</Text>
-          <Text>Century Computers, Inc.</Text>
-        </View>
-        <View style={styles.bodyText}>
-          <Text>Dealer: V14709</Text>
+          <Text>Pacxa</Text>
         </View>
         <View style={styles.agreementText}>
           <Text>
@@ -108,15 +104,29 @@ const Invoice = ({ order }) => {
           </Text>
         </View>
         <View style={styles.agreementText}>
+          <Text>CONFIDENTIALITY AND VALIDITY</Text>
+          <Text>
+            This Sales Agreement or Statement of Work, including any
+            attachments, is for the sole use of the intended recipient and may
+            contain confidential and privileged information. Any unauthorized
+            review, use, disclosure or distribution is prohibited and is only
+            for the intended recipient. This Sales Agreement or Statement of
+            Work is valid for 30 days.
+          </Text>
+        </View>
+        <View style={styles.agreementText}>
           <Text>ACCEPTANCE OF PROPOSAL</Text>
           <Text>
-            Buyer hereby accepts the above proposal, subject to acceptance in
-            writing by Century Computers. By indicating it's acceptance, Buyer
-            understands and agrees that this document will constitute a binding
-            contract on Buyer under the terms and conditions specified above.
-            Buyer further agrees that this agreement is also governed by the
-            additional terms and conditions of the signed Basic Contract
-            attached hereto and incorporated hereby.
+            By signing below, customer acknowledges and agrees to the Terms and
+            Conditions of this Sales Agreement or Statement of Work. In
+            addition, Customer acknowledges and agrees to the Master Agreement
+            which is incorporated by reference and posted at www.pacxa.com/ma.
+          </Text>
+        </View>
+        <View style={styles.agreementText}>
+          <Text>
+            Terms: Net 45 days with purchase order. Please make purchase order
+            out to: Pacxa
           </Text>
         </View>
         <View style={styles.bodySig}>
@@ -194,11 +204,11 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginRight: 40,
     marginTop: 20,
-    marginBottom: 1,
+    marginBottom: 20,
   },
   agreementText: {
     textAlign: "left",
-    fontSize: 9,
+    fontSize: 8,
     marginLeft: 40,
     marginRight: 40,
     marginTop: 1,
