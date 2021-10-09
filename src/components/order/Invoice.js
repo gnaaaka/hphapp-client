@@ -22,6 +22,14 @@ const newLine = (data) => {
 };
 
 const Invoice = ({ order }) => {
+  let orginalDate = new Date(order.createdAt);
+  let formatedDate =
+    orginalDate.getMonth() +
+    1 +
+    "/" +
+    orginalDate.getDay() +
+    "/" +
+    orginalDate.getFullYear();
   return (
     <Document>
       <Page style={styles.body}>
@@ -29,10 +37,12 @@ const Invoice = ({ order }) => {
           <Image src={PacxaLogo} />
         </View>
         <View style={styles.section}>
-          <Text>Quote #: {order._id.slice(-5)}</Text>
-          <Text>PR#: {order.paymentIntent.srt}</Text>
+          <Text>
+            Quote #: {order._id.slice(-5)} - PR#: {order.paymentIntent.srt}
+          </Text>
           <Text>Requested By: {order.paymentIntent.requestedBy}</Text>
           <Text>Address: {newLine(order.paymentIntent.address)}</Text>
+          <Text>Date Created: {newLine(formatedDate)}</Text>
         </View>
         <Table style={styles.table}>
           <TableHeader>

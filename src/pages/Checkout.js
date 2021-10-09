@@ -18,6 +18,8 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Input from "@material-ui/core/Input";
 
+const hphwarehouse =
+  "HPH Warehouse, 1130 N Nimitz Hwy B-100, Honolulu HI 96817";
 const harborCourt =
   "Harbor Court, 55 Merchant Street 23rd Floor, Honlulu HI 96813";
 const straubInfo =
@@ -111,6 +113,7 @@ const Checkout = ({ history }) => {
           <MenuItem value={wilcox}>Wilcox Memorial Hospital</MenuItem>
           <MenuItem value={harborCourt}>Harbor Court</MenuItem>
           <MenuItem value={paliMomi}>Pali Momi Medical Center</MenuItem>
+          <MenuItem value={hphwarehouse}>HPH Warehouse</MenuItem>
         </Select>
         <FormHelperText>Address is required.</FormHelperText>
       </FormControl>
